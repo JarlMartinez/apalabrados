@@ -85,7 +85,8 @@ func HandleInput(w http.ResponseWriter, r *http.Request) {
 func isAlphaNumeric(asciiVal rune) bool {
 	if (asciiVal >= 65 && asciiVal <= 90) || // capital letter
 		(asciiVal >= 97 && asciiVal <= 122) || // small letter
-		(asciiVal >= 48 && asciiVal <= 57) { // number
+		(asciiVal >= 48 && asciiVal <= 57) || // number
+		asciiVal == 32 { // space
 		return true
 	}
 	return false
